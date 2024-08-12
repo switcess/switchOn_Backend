@@ -1,0 +1,26 @@
+[tool.poetry]
+name = "switchon_backend"
+version = "0.1.0"
+description = ""
+authors = ["ajeong <ajung7038@naver.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+fastapi = "^0.111.1"
+pydantic = "^2.8.2"
+uvicorn = "^0.30.4"
+sqlalchemy = "^2.0.31"
+pymysql = "^1.1.1"
+python-dotenv = "^1.0.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+packages = [
+        { include = "switchon_backend" },
+        {include = "cctv", from = "routers"},
+        {include = "*.py*", from = "src"}
+]

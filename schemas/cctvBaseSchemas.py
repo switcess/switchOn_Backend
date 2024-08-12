@@ -1,20 +1,14 @@
 from typing import List, Union
 
-from pydantic import BaseModel
+from pydantic import BaseModel # type: ignore
 
 
-# UserBase 생성
+# CCTVBase 생성
 class CCTVBase(BaseModel):
     date: str
     time: str
     actions: str
     video: str
-
-
-class CCTVCreate(CCTVBase):
-    actions: str
-    video: str
-
 
 class CCTV(CCTVBase):
     id: int

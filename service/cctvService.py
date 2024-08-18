@@ -17,3 +17,12 @@ def create_cctv(db: Session, cctv: cctvCreateRequest.CCTVCreate):
     db.commit()  # DB의 변경 사항 저장하기
     db.refresh(db_cctv)  # 생성된 ID와 같은 DB의 새 데이터를 포함하도록 새로고침
     return db_cctv
+
+def delete_cctv(db: Session, cctv_id: int):
+    db_cctv = db.query(cctvEntity.CCTV).filter(cctvEntity.CCTV.id == cctv_id).first()
+    if db_cctv: #데이터 존재하는 경우
+        db.delete(db_cctv)  # CCTV 항목 삭제하기
+        db.commit()  # DB의 변경 사항 저장하기
+        return {"message": "CCTV item deleted"}
+    else:
+        return {"message": "CCTV item not found"}

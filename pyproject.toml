@@ -10,9 +10,12 @@ python = "^3.12"
 fastapi = "^0.111.1"
 pydantic = "^2.8.2"
 uvicorn = "^0.30.4"
-sqlalchemy = "^2.0.31"
 pymysql = "^1.1.1"
 python-dotenv = "^1.0.1"
+sqlalchemy = "^2.0.32"
+sqlalchemy-orm = "^1.2.10"
+load-dotenv = "^0.1.0"
+cryptography = "^43.0.0"
 
 
 [build-system]

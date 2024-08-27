@@ -1,3 +1,4 @@
+from pydantic import BaseModel
 from .cctvBaseSchemas import CCTVBase
 
 class CCTVCreate(CCTVBase):
